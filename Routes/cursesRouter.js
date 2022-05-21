@@ -6,8 +6,8 @@ const cursesRouter = Router();
 
 cursesRouter.get("/curses", getAllCourses);
 
-cursesRouter.get("/curses/:curseId", getAllModules);
+cursesRouter.get("/curses/:courseId", getAllModules);
 
-cursesRouter.get("/curses/:curseId/:moduleId", getAllModuleClasses);
+cursesRouter.get("/curses/:courseId/:moduleId", getAllModuleClasses);
 
 export default cursesRouter;

@@ -12,13 +12,14 @@ export async function getAllCourses(req, res) {
 }
 
 export async function getAllModules(req, res) {
-    const {curseId} = req.params;
-    if (!curseId) {
+    const {courseId} = req.params;
+    console.log(courseId);
+    if (!courseId) {
         return res.status(422).send("Id do curso não disponível");
     }
 
     try {
-        const allModules = await db.collection("modulos").find({curseId}).toArray();
+        const allModules = await db.collection("modulos").find({courseId}).toArray();
         res.status(200).send(allModules);
     } catch (e) {
         console.log("Impossível buscar os módulos do curso", e);
