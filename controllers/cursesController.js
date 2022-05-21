@@ -6,8 +6,8 @@ export async function getAllCourses(req, res) {
         const allCourses = await db.collection("cursos").find().toArray();
         res.status(200).send(allCourses);
     } catch (e) {
-        console.log("Impossível buscar os cursos", e);
-        res.status(500).send(e);
+        console.log("Impossível buscar os cursos.", e);
+        res.status(500).send("Impossível buscar os cursos.",e);
     }
 }
 
